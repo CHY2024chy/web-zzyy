@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  // 定义人类（增强版）
+  class Person {
+    constructor(id, name, birthDate, gender, height, age) {
+      this.id = id;                // 身份证号
+      this.name = name;            // 姓名
+      this.birthDate = birthDate;  // 出生年月日（Date对象）
+      this.gender = gender;        // 性别（字符串）
+      this.height = height;        // 身高（整数cm）
+      this.age = age;              // 年龄
+    }
+
+    showInfo() {
+      const info = `身份证: ${this.id}, 姓名: ${this.name}, ` +
+              `出生日期: ${this.birthDate.toLocaleDateString()}, ` +
+              `性别: ${this.gender}, 身高: ${this.height}cm, 年龄: ${this.age}<br>`;
+      document.write(info);
+    }
+  }
+
+  // 定义大学生类（增强版）
+  class CollegeStudent extends Person {
+    constructor(id, name, birthDate, gender, height, age, studentId, major, school) {
+      super(id, name, birthDate, gender, height, age);
+      this.studentId = studentId;  // 学号
+      this.major = major;          // 专业
+      this.school = school;        // 学校
+    }
+
+    showInfo() {
+      super.showInfo();
+      const studentInfo = `学号: ${this.studentId}, 专业: ${this.major}, 学校: ${this.school}<br>`;
+      document.write(studentInfo);
+    }
+
+    // 新增：参军资格审查方法
+    checkMilitaryEligibility() {
+      const isMale = this.gender === '男';
+      const isAdult = this.age >= 18;
+      const isTallEnough = this.height >= 180;
+
+      let result = `${this.name} `;
+      if (isMale && isAdult && isTallEnough) {
+        result += "符合参军条件";
+      } else {
+        result += "不符合参军条件";
+
+        const reasons = [];
+        if (!isMale) reasons.push("非男性");
+        if (!isAdult) reasons.push(`年龄不足18岁（${this.age}岁）`);
+        if (!isTallEnough) reasons.push(`身高不足180cm（${this.height}cm）`);
+
+        result += `（原因：${reasons.join("、")}）`;
+      }
+
+      document.write(result + "<br><br>");
+    }
+  }
+
+  // 创建测试实例
+  document.write("<h3>参军资格审查结果</h3>");
+
+  // 符合条件的学生
+  const eligibleStudent = new CollegeStudent(
+          '110101200001011234',
+          '张三',
+          new Date(2000, 0, 1),  // 2000年1月1日
+          '男',
+          185,
+          25,
+          '2020001',
+          '机械工程',
+          '清华大学'
+  );
+  document.write("<strong>学生1：</strong><br>");
+  eligibleStudent.showInfo();
+  eligibleStudent.checkMilitaryEligibility();
+
+  // 不符合条件的学生（女性）
+  const ineligibleStudent1 = new CollegeStudent(
+          '110101200203045678',
+          '李四',
+          new Date(2002, 2, 4),  // 2002年3月4日
+          '女',
+          175,
+          23,
+          '2020002',
+          '计算机科学',
+          '北京大学'
+  );
+  document.write("<strong>学生2：</strong><br>");
+  ineligibleStudent1.showInfo();
+  ineligibleStudent1.checkMilitaryEligibility();
+
+  // 不符合条件的学生（年龄不足）
+  const ineligibleStudent2 = new CollegeStudent(
+          '110101200705067890',
+          '王五',
+          new Date(2007, 4, 6),  // 2007年5月6日
+          '男',
+          182,
+          18,
+          '2023001',
+          '电子工程',
+          '复旦大学'
+  );
+  document.write("<strong>学生3：</strong><br>");
+  ineligibleStudent2.showInfo();
+  ineligibleStudent2.checkMilitaryEligibility();
+
+  // 不符合条件的学生（身高不足）
+  const ineligibleStudent3 = new CollegeStudent(
+          '110101200107089012',
+          '赵六',
+          new Date(2001, 6, 8),  // 2001年7月8日
+          '男',
+          179,
+          24,
+          '2021003',
+          '化学工程',
+          '浙江大学'
+  );
+  document.write("<strong>学生4：</strong><br>");
+  ineligibleStudent3.showInfo();
+  ineligibleStudent3.checkMilitaryEligibility();
+</script>
+</html>

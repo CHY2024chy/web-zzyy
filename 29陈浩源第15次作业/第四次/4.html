@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML选择器示例</title>
+    <style>
+        /* 元素选择器：将所有段落元素的文本颜色设置为蓝色 */
+        p {
+            color: blue;
+        }
+
+        /* 类选择器：将所有类名为highlight的元素的背景颜色设置为黄色 */
+        .highlight {
+            background-color: yellow;
+        }
+
+        /* ID选择器：将ID为main-heading的元素的字体大小设置为24像素 */
+        #main-heading {
+            font-size: 24px;
+        }
+
+        /* 属性选择器：将所有带有target="_blank"属性的链接的颜色设置为红色 */
+        a[target="_blank"] {
+            color: red;
+        }
+
+        /* 伪类选择器：当鼠标悬停在链接上时，将链接的颜色设置为绿色 */
+        a:hover {
+            color: green;
+        }
+
+        /* 组合选择器：将所有div元素内的p元素的字体样式设置为斜体 */
+        div p {
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 使用ID选择器选中的元素 -->
+<h1 id="main-heading">这是主标题</h1>
+
+<!-- 普通段落元素，会被元素选择器选中 -->
+<p>这是一个普通段落。</p>
+
+<!-- 带有highlight类的段落，会被类选择器选中 -->
+<p class="highlight">这是一个高亮段落。</p>
+
+<div>
+    <!-- div内的段落，会被组合选择器选中 -->
+    <p>这是div内的段落。</p>
+</div>
+
+<!-- 带有target="_blank"属性的链接，会被属性选择器选中 -->
+<a href="#" target="_blank">这是一个新窗口打开的链接</a>
+<br>
+<!-- 普通链接，鼠标悬停时会被伪类选择器选中 -->
+<a href="#">这是一个普通链接</a>
+</body>
+
+</html>

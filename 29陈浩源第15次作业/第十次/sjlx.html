@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript数据类型展示</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #555;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    pre {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-size: 14px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>JavaScript数据类型展示</h1>
+
+  <div class="section">
+    <h2>数据类型示例</h2>
+    <pre id="output"></pre>
+    <button onclick="displayDataTypes()">显示数据类型</button>
+  </div>
+</div>
+
+<script>
+  function displayDataTypes() {
+    // 定义各种数据类型的变量
+    const num = 42;                  // 数字
+    const str = "Hello, World!";     // 字符串
+    const bool = true;               // 布尔值
+    const nullVal = null;            // null
+    const undefinedVal = undefined;  // undefined
+    const obj = {name: "John", age: 30}; // 对象
+    const arr = [1, 2, 3, 4, 5];     // 数组
+    const func = function() { return "Function"; }; // 函数
+    const sym = Symbol("unique");    // 符号
+
+    // 输出到网页
+    const output = document.getElementById('output');
+    output.textContent = `
+数字: ${num} (类型: ${typeof num})
+字符串: ${str} (类型: ${typeof str})
+布尔值: ${bool} (类型: ${typeof bool})
+null: ${nullVal} (类型: ${typeof nullVal})
+undefined: ${undefinedVal} (类型: ${typeof undefinedVal})
+对象: ${JSON.stringify(obj)} (类型: ${typeof obj})
+数组: ${arr} (类型: ${typeof arr}, 实际类型: ${Array.isArray(arr) ? '数组' : '非数组'})
+函数: ${func} (类型: ${typeof func})
+符号: ${sym.toString()} (类型: ${typeof sym})
+            `;
+  }
+</script>
+</body>
+</html>

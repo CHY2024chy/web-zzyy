@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ES6类与继承示例</title>
+</head>
+<body>
+<script>
+  // 人类定义（同上）
+  class Person {
+    constructor(id, name, age) {
+      this.id = id;
+      this.name = name;
+      this.age = age;
+    }
+    showInfo() {
+      const info = `身份证: ${this.id}, 姓名: ${this.name}, 年龄: ${this.age}<br>`;
+      document.write(info);
+    }
+  }
+
+  // 大学生类定义（同上）
+  class CollegeStudent extends Person {
+    constructor(id, name, age, studentId, major, school) {
+      super(id, name, age);
+      this.studentId = studentId;
+      this.major = major;
+      this.school = school;
+    }
+    showInfo() {
+      super.showInfo();
+      const studentInfo = `学号: ${this.studentId}, 专业: ${this.major}, 学校: ${this.school}<br>`;
+      document.write(studentInfo);
+    }
+    study() {
+      const studyInfo = `${this.name}正在${this.school}学习${this.major}专业<br>`;
+      document.write(studyInfo);
+    }
+  }
+
+  // 实例化并输出
+  document.write("<hr>");
+  document.write("<h3>普通人类信息</h3>");
+  const person = new Person('110101200001011234', '李四', 25);
+  person.showInfo();
+
+  document.write("<hr>");
+  document.write("<h3>大学生信息</h3>");
+  const student = new CollegeStudent(
+          '110101200109012345',
+          '王五',
+          24,
+          '20200101',
+          '计算机科学与技术',
+          '北京大学'
+  );
+  student.showInfo();
+  student.study();
+</script>
+</body>
+</html>

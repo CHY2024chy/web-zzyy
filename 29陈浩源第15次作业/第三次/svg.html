@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Heart</title>
+    <style>
+        div{
+            background-color: aqua;
+            float: left;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+<a href="../index.html">
+    <div><<< 返回</div>
+</a>
+<br>
+<svg width="200" height="200">
+    <!-- 定义红心的路径 -->
+    <path d="M100,20 C120,10 150,30 150,60 C150,80 130,100 100,130 C70,100 50,80 50,60 C50,30 80,10 100,20 Z"
+          fill="red" />
+</svg>
+<svg width="200" height="200">
+    <!-- 绘制黄色圆形作为笑脸的脸 -->
+    <circle cx="100" cy="100" r="80" fill="yellow" stroke="black" stroke-width="4" />
+    <!-- 绘制左眼 -->
+    <circle cx="70" cy="80" r="15" fill="black" />
+    <!-- 绘制右眼 -->
+    <circle cx="130" cy="80" r="15" fill="black" />
+    <!-- 绘制嘴巴（弧形） -->
+    <path d="M70,130 A30,30 0 0 1 130,130" stroke="black" stroke-width="4" fill="none" />
+</svg>
+</body>
+
+</html>

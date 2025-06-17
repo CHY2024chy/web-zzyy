@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Pattern with Flex</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .dice-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .dice-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dice-face {
+            width: 80px;
+            height: 80px;
+            background-color: #333;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="dice-container">
+    <div class="dice-row">
+        <div class="dice-face">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <div class="dice-row">
+        <div class="dice-face">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+    </div>
+    <div class="dice-row">
+        <div class="dice-face">
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <div class="dice-row">
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+    </div>
+    <div class="dice-row">
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+    </div>
+    <div class="dice-row">
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+    </div>
+    <div class="dice-row">
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+        <div class="dice-face">
+            <div class="dot"></div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

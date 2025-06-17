@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-image: url("../img/1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .ka {
+            border-radius: 5px;
+            background-color: #ced9dd;
+            width: 450px;
+            margin: 0 auto;
+        }
+
+        .la input {
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #6c787d;
+            background-color: #ced9dd;
+        }
+        .mi {
+            margin: 5px;
+        }
+        .mi input{
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #6c787d;
+            background-color: #ced9dd;
+        }
+        .la {
+            margin: 5px;
+        }
+
+        .op {
+            color: brown;
+        }
+
+        .qw input {
+            margin-left: 8px;
+        }
+
+        .ty input {
+            width: 138px;
+        }
+
+        form {
+            padding: 25px
+        }
+        .ji {
+            text-align: center;
+            margin-top: 24px;
+        }
+        .ji input{
+            width: 70px;
+            height: 30px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        p {
+            text-align: center;
+        }
+        div:hover {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>社区调查</h1>
+<p>带*表示必填</p>
+<div class="ka">
+    <form>
+        <div class="la">
+            <span>姓名：</span><input type="text">
+        </div>
+        <div class="qw la"><span>性别<span class="op">*</span></span><span>:</span><input type="radio"
+                                                                                          name="xb">男<input
+                type="radio" name="xb">女<input type="radio" name="xb">武装直升机
+        </div>
+        <div class="mi"><span>年龄<span class="op">*</span></span><span>：</span><input type="number" min="1" max="100"></div>
+        <div class="la ty"><span>性格介绍：</span><input type="text"></div>
+        <div class="qw la"><span>喜欢的游戏：</span><input type="checkbox" name="e">CS2<input type="checkbox" name="e">守望先锋2<input
+                type="checkbox" name="e">永劫无间<input type="checkbox" name="e">都市天际线<input type="checkbox"
+                                                                                                  name="e">艾尔登法环<input
+                type="checkbox" name="e">宇宙机器人<input type="checkbox" name="e">无畏契约
+        </div>
+        <div class="la"><span>密码<span class="op">*</span>：</span><input maxlength="15" type="password"></div>
+        <div class="ji"><input type="submit" value="提交"></div>
+        <div class="la ji"><a href="../index.html"><<< 返回 </a></div>
+    </form>
+</div>
+
+</body>
+</html>

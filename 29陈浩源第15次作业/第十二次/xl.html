@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    {
+      let ap = 165; // 这里保留原始参数名以保持一致性
+      switch (true) {
+        case (ap >= 0 && ap <= 100):
+          document.write("空气质量状况：良好");
+          break;
+        case (ap >= 101 && ap <= 200):
+          document.write("空气质量状况：轻度污染");
+          break;
+        case (ap >= 201 && ap <= 300):
+          document.write("空气质量状况：中度污染");
+          break;
+        case (ap > 300):
+          document.write("空气质量状况：重度污染");
+          break;
+        default:
+          document.write("空气质量指数无效");
+      }
+    }
+    {
+      let ap = 165;
+      if (ap >= 0 && ap <= 100) {
+        document.write("<h1>空气质量状况：良好</h1>");
+      } else if (ap >= 101 && ap <= 200) {
+        document.write("<h1>空气质量状况：轻度污染</h1>");
+      } else if (ap >= 201 && ap <= 300) {
+        document.write("<h1>空气质量状况：中度污染</h1>");
+      } else if (ap > 300) {
+        document.write("<h1>空气质量状况：重度污染</h1>");
+      } else {
+        document.write("<h1>空气质量指数无效</h1>");
+      }
+
+  }
+    {
+      let a = 53;
+      let s = "女";
+
+      document.write("职工信息：年龄" + a + "岁，性别" + s + "<br>");
+
+      if (s === "男") {
+        if (a >= 60) {
+          document.write("<h1>已退休</h1>");
+        } else {
+          document.write("<h1>未退休</h1>");
+        }
+      } else if (s === "女") {
+        if (a >= 55) {
+          document.write("<h1>已退休</h1>");
+        } else {
+          document.write("<h1>未退休</h1>");
+        }
+      } else {
+        document.write("<h1>性别信息无效</h1>");
+      }
+    }
+    {
+      let a = 53; // 年龄
+      let s = "女"; // 性别
+
+      document.write("职工信息：年龄" + a + "岁，性别" + s + "<br>");
+
+      switch (s) {
+        case "男":
+          switch (true) {
+            case (a >= 60):
+              document.write("<h1>已退休</h1>");
+              break;
+            default:
+              document.write("<h1>未退休</h1>");
+          }
+          break;
+        case "女":
+          switch (true) {
+            case (a >= 55):
+              document.write("<h1>已退休</h1>");
+              break;
+            default:
+              document.write("<h1>未退休</h1>");
+          }
+          break;
+        default:
+          document.write("<h1>性别信息无效</h1>");
+      }
+    }
+
+</script>
+</html>

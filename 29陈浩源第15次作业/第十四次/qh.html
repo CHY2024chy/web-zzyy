@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  {
+    let apex = 0;
+
+    for (let i = 1; i <= 100; i++) {
+      if (i % 3 !== 0) {
+        continue;
+      }
+      apex += i;
+    }
+
+    document.write("使用 continue 求和结果:",apex,"</br>");
+
+  }
+  {
+    let apex = 0;
+
+    for (let i = 1; i <= 100; i++) {
+      if (i % 3 === 0) {
+        apex += i;
+      }
+    }
+
+    document.write("不使用 continue 求和结果:",apex);
+  }
+</script>
+</html>

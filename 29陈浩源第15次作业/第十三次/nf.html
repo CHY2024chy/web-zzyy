@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+请选择您的出生年月：
+<select name='year'>
+  <option value='1980'>1980年</option>
+  <option value='1981'>1981年</option>
+  <option value='1982'>1982年</option>
+
+</select>
+<select name='month'>
+  <option value='1' selected>1月</option>
+  <option value='2'>2月</option>
+  <option value='3'>3月</option>
+
+</select>
+
+<br>
+
+请选择您的出生年月：
+<script type="text/javascript">
+  document.write('<select name=\'year\'>');
+  for (let i = 1980; i < 2010; i++) {
+    document.write("<option value='" + i + "'" + (i === 1985? " selected" : "") + ">" + i + "年</option>");
+  }
+  document.write('</select>');
+  document.write("<select name='month'>");
+  for (var i = 1; i <= 12; i++) {
+    document.write("<option value='" + i + "'>" + i + "月</option>");
+  }
+  document.write("</select>");
+</script>
+</body>
+</html>

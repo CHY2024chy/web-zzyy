@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function sumWhile(n) {
+        let sum = 0;
+        let i = 1;
+        while (i <= n) {
+            sum += i;
+            i++;
+        }
+        return sum;
+    }
+
+    function sumDoWhile(n) {
+        let sum = 0;
+        let i = 1;
+        do {
+            sum += i;
+            i++;
+        } while (i <= n);
+        return sum;
+    }
+
+    function sumFor(n) {
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    // 计算不同范围的累加和
+    const ranges = [10, 100, 1000, 10000];
+    for (const r of ranges) {
+        document.write(`1到${r}的和：` + "</br>");
+        document.write(`sumWhile(${r}) = ${sumWhile(r)}`+ "</br>");
+        document.write(`sumDoWhile(${r}) = ${sumDoWhile(r)}`+ "</br>");
+        document.write(`sumFor(${r}) = ${sumFor(r)}`+ "</br>");
+        document.write("------------------------------");
+    }
+
+</script>
+</html>

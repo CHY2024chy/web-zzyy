@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>变量计算展示</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    .calculation-results {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>变量计算展示</h1>
+
+  <button onclick="calculate()">执行计算</button>
+
+  <div class="calculation-results" id="results">
+    <!-- 计算结果将在这里显示 -->
+  </div>
+</div>
+
+<script>
+  function calculate() {
+    // 定义变量
+    let a = 2;
+    let b = 3;
+
+    // 计算各种运算结果
+    const sum = a + b;
+    const difference = a - b;
+    const product = a * b;
+    const quotient = a / b;
+    const remainder = a % b;
+
+    // 自增自减运算（展示不同的自增自减方式）
+    const preIncrementA = ++a; // 先自增，再返回值
+    const postIncrementA = a++; // 先返回值，再自增
+    const currentA = a; // 经过两次自增后的a
+
+    const preDecrementB = --b; // 先自减，再返回值
+    const postDecrementB = b--; // 先返回值，再自减
+    const currentB = b; // 经过两次自减后的b
+
+    // 输出到网页
+    const results = document.getElementById('results');
+    results.textContent = `
+初始值: a = 2, b = 3
+
+基本运算:
+a + b = ${sum}
+a - b = ${difference}
+a * b = ${product}
+a / b = ${quotient.toFixed(2)}
+a % b = ${remainder}
+
+自增运算:
+++a (先自增) = ${preIncrementA}
+a++ (后自增) = ${postIncrementA}
+当前 a 的值 = ${currentA}
+
+自减运算:
+--b (先自减) = ${preDecrementB}
+b-- (后自减) = ${postDecrementB}
+当前 b 的值 = ${currentB}
+            `;
+  }
+</script>
+</body>
+</html>

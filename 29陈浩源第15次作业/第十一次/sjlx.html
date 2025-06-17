@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = 10
+    let b = "20"
+    let c = true
+    let d = null
+
+    document.write("<h3>转字符串</h3>")
+    document.write(String(a) + "<br>")
+    document.write(String(c) + "<br>")
+    document.write(String(d) + "<br><br>")
+
+    document.write("<h3>转数字</h3>")
+    document.write(Number(b) + "<br>")
+    document.write(Number("abc") + "<br>")
+    document.write(Number(c) + "<br><br>")
+
+    document.write("<h3>转布尔</h3>")
+    document.write(Boolean(0) + "<br>")
+    document.write(Boolean(100) + "<br>")
+    document.write(Boolean("") + "<br>")
+    document.write(Boolean("abc") + "<br><br>")
+
+    document.write("<h3>自动转换</h3>")
+    document.write("5" + 3 + "<br>")
+    document.write("5" - 3 + "<br>")
+</script>
+</html>

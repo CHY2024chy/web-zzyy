@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D动感立方体</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1a1a1a;
+      perspective: 800px;
+    }
+
+    .cube-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      transform-style: preserve-3d;
+      animation: rotateCube 10s linear infinite;
+    }
+
+    .cube-container:hover {
+      animation-play-state: paused;
+    }
+
+    .cube-face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+      opacity: 0.9;
+    }
+
+    /* 前面 */
+    .front { transform: translateZ(100px); background: #2196F3; }
+    /* 后面 */
+    .back { transform: translateZ(-100px) rotateY(180deg); background: #F44336; }
+    /* 左面 */
+    .left { transform: rotateY(90deg) translateZ(100px); background: #4CAF50; }
+    /* 右面 */
+    .right { transform: rotateY(-90deg) translateZ(100px); background: #FFC107; }
+    /* 上面 */
+    .top { transform: rotateX(90deg) translateZ(100px); background: #9C27B0; }
+    /* 下面 */
+    .bottom { transform: rotateX(-90deg) translateZ(100px); background: #009688; }
+
+    @keyframes rotateCube {
+      from { transform: rotateY(0deg) rotateX(0deg); }
+      to { transform: rotateY(360deg) rotateX(360deg); }
+    }
+  </style>
+</head>
+<body>
+<div class="cube-container">
+  <div class="cube-face front">前面</div>
+  <div class="cube-face back">后面</div>
+  <div class="cube-face left">左面</div>
+  <div class="cube-face right">右面</div>
+  <div class="cube-face top">上面</div>
+  <div class="cube-face bottom">下面</div>
+</div>
+</body>
+</html>

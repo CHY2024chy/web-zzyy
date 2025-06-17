@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 元素相关知识</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #007BFF;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+<h1>HTML 元素相关知识</h1>
+
+<h2>1. 块元素</h2>
+<ul>
+    <li><strong>定义</strong>：独占一行，可设宽高，默认宽度为父元素 100%。</li>
+    <li><strong>常用及场景</strong>：
+        <ul>
+            <li><code>&lt;p&gt;</code>：显示大段文本，如文章段落。</li>
+            <li><code>&lt;div&gt;</code>：布局划分，如网页分区。</li>
+            <li><code>&lt;h1&gt;-&lt;h6&gt;</code>：标题，区分内容层次。</li>
+            <li><code>&lt;ul&gt;/&lt;ol&gt; + &lt;li&gt;</code>：列表，展示项目。</li>
+            <li><code>&lt;pre&gt;</code>：预格式化文本，如代码展示。</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>2. 行内元素</h2>
+<ul>
+    <li><strong>定义</strong>：不独占一行，宽高由内容定。</li>
+    <li><strong>常用及场景</strong>：
+        <ul>
+            <li><code>&lt;a&gt;</code>：超链接，网页跳转。</li>
+            <li><code>&lt;img&gt;</code>：插入图片。</li>
+            <li><code>&lt;span&gt;</code>：文本样式设置。</li>
+            <li><code>&lt;em&gt;</code>：强调文本，斜体显示。</li>
+            <li><code>&lt;strong&gt;</code>：重要文本，粗体显示。</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>3. 兼具两类属性元素</h2>
+<p><code>&lt;button&gt;</code>、<code>&lt;input&gt;</code> 默认分别类似块、行内元素，可通过 CSS <code>display</code> 属性改变表现。</p>
+
+
+
+<a href="../index.html"><<< 返回</a>
+</body>
+
+</html>

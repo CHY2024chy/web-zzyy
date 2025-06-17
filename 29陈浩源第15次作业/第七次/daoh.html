@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>企业级下拉菜单</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+    }
+
+    /* 导航栏整体样式 */
+    nav {
+      background-color: #003c5f; /* 深海蓝色背景 */
+      padding: 15px 0;
+    }
+
+    /* 主菜单列表样式 */
+    .main-menu {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* 主菜单项样式 */
+    .main-menu > li {
+      position: relative;
+    }
+
+    /* 主菜单链接样式 */
+    .main-menu > li > a {
+      color: white;
+      font-size: 16px;
+      padding: 8px 0;
+      transition: color 0.3s ease;
+    }
+
+    /* 主菜单悬停效果 */
+    .main-menu > li > a:hover {
+      color: #0099ff; /* 悬停时变为浅蓝色 */
+    }
+
+    /* 下拉菜单容器样式 */
+    .dropdown {
+      position: relative;
+    }
+
+    /* 二级菜单样式 */
+    .sub-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #003c5f; /* 与主菜单同色背景 */
+      min-width: 200px;
+      padding: 10px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 悬停下拉菜单显示 */
+    .dropdown:hover .sub-menu {
+      display: block;
+    }
+
+    /* 二级菜单项样式 */
+    .sub-menu li {
+      padding: 8px 20px;
+    }
+
+    /* 二级菜单链接样式 */
+    .sub-menu li a {
+      color: white;
+      font-size: 16px;
+      display: block;
+      transition: color 0.3s ease;
+    }
+
+    /* 二级菜单悬停效果 */
+    .sub-menu li a:hover {
+      color: #0099ff; /* 悬停时变为浅蓝色 */
+    }
+
+    /* 模拟当前选中项（可根据实际页面添加 active 类） */
+    .main-menu > li > a.active {
+      border-bottom: 2px solid white; /* 白色下划线 */
+      padding-bottom: 3px;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <ul class="main-menu">
+    <li><a href="#" class="active">美的业务</a></li>
+    <li class="dropdown">
+      <a href="#">总览</a>
+      <ul class="sub-menu">
+        <li><a href="#">智能家居事业群</a></li>
+        <li><a href="#">机电事业群</a></li>
+        <li><a href="#">暖通与楼宇事业部</a></li>
+        <li><a href="#">机器人与自动化事业部</a></li>
+        <li><a href="#">数字化创新业务</a></li>
+      </ul>
+    </li>
+    <!-- 可按此格式继续添加其他主菜单项 -->
+  </ul>
+</nav>
+</body>
+</html>

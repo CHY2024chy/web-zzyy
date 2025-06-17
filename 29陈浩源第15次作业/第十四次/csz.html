@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let target = Math.floor(Math.random() * 100) + 1;
+
+    while (true) {
+        let guess = parseInt(prompt("请输入你猜测的数字（1-100）："));
+
+        if (guess === target) {
+            console.log("恭喜你猜对了！");
+            break; // 猜对后结束循环
+        } else if (guess > target) {
+            console.log("猜大了"); // 提示用户猜得太大
+        } else {
+            console.log("猜小了"); // 提示用户猜得太小
+        }
+    }
+</script>
+</html>

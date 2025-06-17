@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  // 定义成绩对象
+  const scores = {
+    '数学': 80,
+    '语文': 85,
+    '英语': 91,
+    '物理': 91,
+    '化学': 88
+  };
+
+  // 将成绩对象转换为数组并排序
+  const sortedScores = Object.entries(scores)
+          .sort((a, b) => a[1] - b[1]);
+
+  // 输出排序结果
+  document.write('<h2>学生考试成绩升序排列</h2>');
+  document.write('<table border="1" cellspacing="0" cellpadding="8">');
+  document.write('<tr><th>科目</th><th>成绩</th></tr>');
+
+  sortedScores.forEach(([subject, score]) => {
+    document.write(`<tr>
+        <td>${subject}</td>
+        <td>${score}</td>
+    </tr>`);
+  });
+
+  document.write('</table>');
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>能同时被3和5整除的数</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .result {
+      font-family: monospace;
+      line-height: 1.5;
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+    h1 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>1000以内能同时被3和5整除的数</h1>
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  const isDivisibleBy3And5 = function(num) {
+    return num % 3 === 0 && num % 5 === 0;
+  };
+
+  // 生成结果字符串
+  let result = '';
+  let count = 0;
+
+  for (let i = 1; i <= 1000; i++) {
+    if (isDivisibleBy3And5(i)) {
+      result += i;
+      count++;
+
+      if (count % 6 === 0) {
+        result += '\n';
+      } else {
+        result += '\t';
+      }
+    }
+  }
+
+  document.getElementById('result').textContent = result;
+</script>
+</body>
+</html>

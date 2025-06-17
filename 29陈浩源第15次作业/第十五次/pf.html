@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  // 2022年中国电影票房数据
+  const movies = [
+    { name: "长津湖之水门桥", boxOffice: 40.67 },
+    { name: "独行月球", boxOffice: 31.02 },
+    { name: "这个杀手不太冷静", boxOffice: 26.28 },
+    { name: "奇迹·笨小孩", boxOffice: 13.77 },
+    { name: "熊出没·重返地球", boxOffice: 14.92 },
+    { name: "侏罗纪世界3", boxOffice: 10.61 },
+    { name: "人生大事", boxOffice: 17.12 },
+    { name: "万里归途", boxOffice: 15.93 },
+    { name: "神探大战", boxOffice: 7.22 },
+    { name: "明日战记", boxOffice: 6.28 }
+  ];
+
+  // 按票房降序排列
+  movies.sort((a, b) => b.boxOffice - a.boxOffice);
+
+  // 输出排行榜标题
+  document.write('<h1>2022年中国电影票房排行榜</h1>');
+  document.write('<div class="movie-container">');
+  document.write('<table class="movie-table">');
+  document.write('<tr><th>排名</th><th>电影名称</th><th>票房（亿元）</th></tr>');
+
+  // 输出表格内容
+  movies.forEach((movie, index) => {
+    const rank = index + 1;
+    const isTop3 = rank <= 3;
+    const rankClass = isTop3 ? 'class="top3 rank"' : 'class="rank"';
+
+    document.write(`<tr>
+    <td ${rankClass}>${rank}${isTop3 ? ' <i class="fa fa-trophy"></i>' : ''}</td>
+    <td>${movie.name}</td>
+    <td>${movie.boxOffice}</td>
+  </tr>`);
+  });
+
+  document.write('</table>');
+
+  // 输出统计信息
+  document.write('<div class="stats">');
+  document.write(`<p>总上榜电影：${movies.length} 部</p>`);
+  document.write(`<p>总票房：${movies.reduce((sum, m) => sum + m.boxOffice, 0).toFixed(2)} 亿元</p>`);
+  document.write(`<p>平均票房：${(movies.reduce((sum, m) => sum + m.boxOffice, 0) / movies.length).toFixed(2)} 亿元</p>`);
+  document.write('</div></div>');
+</script>
+</html>
